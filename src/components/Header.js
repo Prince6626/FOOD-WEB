@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex justify-between bg-orange-100 sm:bg-yellow-100 lg:bg-green-50 shadow-lg">
             <div className="logo-container">
                 <img 
-                className="w-30 h-28" 
+                className="w-30 rounded-full h-28" 
                 src={LOGO_URL}
                 />
             </div>
@@ -42,11 +42,11 @@ const Header = () => {
                     <li className="px-4">
                         <Link to="/cart">Cart - ({cartItems.length})</Link>
                     </li>
+                    
                     <button className="bg-orange-400 hover:bg-orange-500 text-white px-4 py-1 rounded-md transition"
-                    onClick={()=>{
-                        btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-                    }
-                    }
+                        onClick={()=>{
+                            btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
+                        }}
                     >{btnName}</button>
                 </ul>
             </div>
