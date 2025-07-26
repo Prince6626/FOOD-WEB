@@ -82,19 +82,22 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filterList.map((restaurent) => (
-          <Link
-            key={restaurent.info.id}
-            to={"/restaurants/" + restaurent.info.id}
-          >
-            {restaurent.info.isOpen ? (
-              <RestaurantCardWithOpen resData={restaurent.info} />
-            ) : (
-              <RestaurantCard resData={restaurent.info} />
-            )}
-          </Link>
-        ))}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+          {filterList.map((restaurent) => (
+            <Link
+              key={restaurent.info.id}
+              to={"/restaurants/" + restaurent.info.id}
+              className="flex justify-center"
+            >
+              {restaurent.info.isOpen ? (
+                <RestaurantCardWithOpen resData={restaurent.info} />
+              ) : (
+                <RestaurantCard resData={restaurent.info} />
+              )}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
