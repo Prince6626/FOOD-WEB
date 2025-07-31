@@ -34,15 +34,13 @@ const RestaurantCategory = ({data ,showItems ,setShowIndex}) => {
                 </div>
                 
                 {/* Accordion body */}
-                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    showItems ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-                }`}>
+            
                     {showItems && (
                         <div className="border-t border-gray-100 p-3 md:p-6 pt-3 md:pt-4 bg-gray-50/30">
                             <ItemList items={data.itemCards}/>
                         </div>
                     )}
-                </div>
+                
             </div>
         </div>
     );

@@ -27,15 +27,33 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-            <span className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></span>
           </button>
 
           {/* Online Status - Compact */}
           <div className="flex items-center space-x-1">
-            <div className={`w-2 h-2 rounded-full transition-colors duration-300 ${OnlineStatus ? 'bg-green-400' : 'bg-red-400'}`}></div>
-            <span className="text-xs text-gray-600 hidden sm:inline">{OnlineStatus ? 'Online' : 'Offline'}</span>
+            <div
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                OnlineStatus ? "bg-green-400" : "bg-red-400"
+              }`}
+            ></div>
+            <span className="text-xs text-gray-600 hidden sm:inline">
+              {OnlineStatus ? "Online" : "Offline"}
+            </span>
           </div>
         </div>
 
@@ -58,15 +76,17 @@ const Header = () => {
         <div className="flex items-center space-x-4">
           {/* Mobile Cart - Prominent */}
           <div className="md:hidden">
-            <Link 
-              to="/cart" 
+            <Link
+              to="/cart"
               className="relative flex items-center justify-center w-10 h-10 bg-orange-200 hover:bg-orange-300 rounded-full transition-colors duration-200 group"
               aria-label={`Cart with ${cartItems.length} items`}
             >
-              <span className="text-lg group-hover:scale-110 transition-transform duration-200">🛒</span>
+              <span className="text-lg group-hover:scale-110 transition-transform duration-200">
+                🛒
+              </span>
               {cartItems.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center min-w-5 animate-pulse">
-                  {cartItems.length > 99 ? '99+' : cartItems.length}
+                  {cartItems.length > 99 ? "99+" : cartItems.length}
                 </span>
               )}
             </Link>
@@ -76,40 +96,40 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <ul className="flex items-center space-x-1">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="px-4 py-2 rounded-md hover:bg-orange-200/50 transition-colors duration-200 text-gray-700 hover:text-orange-800"
                 >
                   Home
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/about" 
+                <Link
+                  to="/about"
                   className="px-4 py-2 rounded-md hover:bg-orange-200/50 transition-colors duration-200 text-gray-700 hover:text-orange-800"
                 >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/contact"
                   className="px-4 py-2 rounded-md hover:bg-orange-200/50 transition-colors duration-200 text-gray-700 hover:text-orange-800"
                 >
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/grocery" 
+                <Link
+                  to="/grocery"
                   className="px-4 py-2 rounded-md hover:bg-orange-200/50 transition-colors duration-200 text-gray-700 hover:text-orange-800"
                 >
                   Grocery
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/cart" 
+                <Link
+                  to="/cart"
                   className="relative px-4 py-2 rounded-md hover:bg-orange-200/50 transition-colors duration-200 text-gray-700 hover:text-orange-800 flex items-center space-x-1"
                 >
                   <span>Cart</span>
@@ -122,14 +142,18 @@ const Header = () => {
               </li>
 
               <li className="ml-2">
-                <button
-                  className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
-                  onClick={() => {
-                    btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-                  }}
-                >
-                  {btnName}
-                </button>
+                <Link to="/login">
+                  <button
+                    className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
+                    onClick={() => {
+                      btnName === "Login"
+                        ? setBtnName("Logout")
+                        : setBtnName("Login");
+                    }}
+                  >
+                    {btnName}
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -137,11 +161,17 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white/95 backdrop-blur-sm border-t border-orange-200 transition-all duration-300 ease-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+      <div
+        className={`md:hidden bg-white/95 backdrop-blur-sm border-t border-orange-200 transition-all duration-300 ease-out ${
+          isMenuOpen
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
         <ul className="flex flex-col">
           <li>
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={() => setIsMenuOpen(false)}
               className="block px-6 py-4 hover:bg-orange-50 transition-colors duration-200 border-b border-orange-100/50 text-gray-700 hover:text-orange-800 font-medium"
             >
@@ -149,8 +179,8 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               onClick={() => setIsMenuOpen(false)}
               className="block px-6 py-4 hover:bg-orange-50 transition-colors duration-200 border-b border-orange-100/50 text-gray-700 hover:text-orange-800 font-medium"
             >
@@ -158,8 +188,8 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="block px-6 py-4 hover:bg-orange-50 transition-colors duration-200 border-b border-orange-100/50 text-gray-700 hover:text-orange-800 font-medium"
             >
@@ -167,8 +197,8 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="/grocery" 
+            <Link
+              to="/grocery"
               onClick={() => setIsMenuOpen(false)}
               className="block px-6 py-4 hover:bg-orange-50 transition-colors duration-200 border-b border-orange-100/50 text-gray-700 hover:text-orange-800 font-medium"
             >
@@ -176,15 +206,19 @@ const Header = () => {
             </Link>
           </li>
           <li className="p-4">
-            <button
-              className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-3 rounded-full transition-all duration-200 w-full font-medium shadow-md hover:shadow-lg transform hover:scale-105"
-              onClick={() => {
-                btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-                setIsMenuOpen(false);
-              }}
-            >
-              {btnName}
-            </button>
+            <Link to="/login">
+              <button
+                className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-3 rounded-full transition-all duration-200 w-full font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+                onClick={() => {
+                  btnName === "Login"
+                    ? setBtnName("Logout")
+                    : setBtnName("Login");
+                  setIsMenuOpen(false);
+                }}
+              >
+                {btnName}
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
