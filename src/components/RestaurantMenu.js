@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./ReasturantCategory";
 import { useState } from "react";
+import MenuShimmer from "./MenuShimmer"
 
 const RestaurantMenu = () => {
   
@@ -12,7 +13,7 @@ const RestaurantMenu = () => {
 
   const [showIndex ,setShowIndex] = useState(null);
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <MenuShimmer />;
 
   const { name, cuisines = [], costForTwoMessage } =
     resInfo?.cards?.[2]?.card?.card?.info;
