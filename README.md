@@ -1,26 +1,35 @@
 # 🍕 FOOD-WEB
 
-**FOOD-WEB** is a modern and responsive food ordering web application where users can browse restaurants, explore menus, and simulate placing orders — inspired by real-world food delivery platforms like Zomato and Swiggy.
+A Swiggy- and Zomato-inspired food ordering web application built using **React.js** and **Tailwind CSS**. FOOD-WEB simulates real-world features of a modern food delivery platform and includes a dedicated **Grocery Page** along with restaurant browsing, menus, and responsive design.
 
 ---
 
-## 🌟 Features
+## 🚀 Features
 
-- 🏠 Beautiful home page with restaurant listings
-- 🍽️ Expandable restaurant menus using accordion-style UI
-- 🔍 Search functionality & sorting system
-- 📱 Fully responsive design using Tailwind CSS
-- ⚙️ Clean component-based structure using React
+🍔 Browse restaurant listings  
+📜 Expandable restaurant menus (accordion UI)  
+🛒 Grocery Page to explore and simulate grocery ordering  
+🔍 Search and sort functionality  
+✨ Shimmer UI while loading content  
+💤 Lazy loading of components for better performance  
+📱 Responsive design with Tailwind CSS  
+⚡ Optimized with React functional components & hooks  
 
 ---
 
-## 🧰 Tech Stack
+## 🛠️ Tech Stack
 
-- ⚛️ React.js
-- 🎨 Tailwind CSS
-- ⚙️ JavaScript (ES6+)
-- 📁 Modular folder structure
-- 🔁 React hooks for state management
-- 🖼️ Dummy data / Mock API integration
+- ⚛️ React.js  
+- 🎨 Tailwind CSS  
+- 📦 Parcel Bundler  
+- 🔁 React Hooks  
+- 📂 Modular Folder Structure  
+- 🖼️ Dummy Data & Swiggy API
+
+---
+
+## 🔗 Live Demo
+
+👉 [Visit Live Site](https://food-web-rose-omega.vercel.app)
 
 ---
